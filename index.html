@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로또 번호 생성기</title>
+    <title>실시간 서버 시간 조회</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>로또 번호 생성기</h1>
-        <div id="numbers" class="numbers-container"></div>
-        <button id="generate-btn">번호 생성</button>
+        <h1>실시간 서버 시간 조회</h1>
+        <div class="input-container">
+            <input type="text" id="url-input" placeholder="https://example.com">
+            <button id="fetch-btn">시간 확인</button>
+        </div>
+        <div id="time-display" class="time-container"></div>
     </div>
     <script src="main.js"></script>
 </body>
