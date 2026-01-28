@@ -25,12 +25,10 @@ fetchBtn.addEventListener('click', () => {
 async function fetchServerTime(url) {
     timeDisplay.textContent = '가져오는중...';
     try {
-        const proxyUrl = 'https://proxy.cors.sh/';
-        const response = await fetch(proxyUrl + url, {
+        // Use the self-hosted Cloudflare Worker as a proxy
+        const proxyUrl = `/proxy?url=${encodeURIComponent(url)}`;
+        const response = await fetch(proxyUrl, {
             method: 'HEAD',
-            headers: {
-                'x-cors-api-key': 'temp_1a2b3c4d5e6f7g8h9i0j', // Temporary key for cors.sh
-            }
         });
 
         if (!response.ok) {
